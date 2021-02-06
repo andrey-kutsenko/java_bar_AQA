@@ -1,6 +1,6 @@
  apply plugin: 'java'
 apply plugin: 'application'
-mainClassName= "MyFirstProgram"
+mainClassName= "ua.stqa.aqa.sandbox.MyFirstProgram"
 
  repositories {
 
@@ -8,6 +8,7 @@ mainClassName= "MyFirstProgram"
  }
 
  dependencies {
-     implementation 'org.testng:testng:7.3.0'
+     compile 'org.testng:testng:7.3.0'
+
 
  }
