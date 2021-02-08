@@ -1,4 +1,8 @@
-ua/stqa/aqa/addressbook/GroupCreationTests.java
- ua.stqa.aqa.addressbook.GroupCreationTests
 ua/stqa/aqa/addressbook/GroupData.java
  ua.stqa.aqa.addressbook.GroupData
+ua/stqa/aqa/addressbook/TestBase.java
+ ua.stqa.aqa.addressbook.TestBase
+ua/stqa/aqa/addressbook/GroupDeletionTests.java
+ ua.stqa.aqa.addressbook.GroupDeletionTests
+ua/stqa/aqa/addressbook/GroupCreationTests.java
+ ua.stqa.aqa.addressbook.GroupCreationTests
