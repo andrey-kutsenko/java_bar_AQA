@@ -1,8 +1,16 @@
-ua/stqa/aqa/addressbook/GroupData.java
- ua.stqa.aqa.addressbook.GroupData
-ua/stqa/aqa/addressbook/TestBase.java
- ua.stqa.aqa.addressbook.TestBase
-ua/stqa/aqa/addressbook/GroupDeletionTests.java
- ua.stqa.aqa.addressbook.GroupDeletionTests
-ua/stqa/aqa/addressbook/GroupCreationTests.java
- ua.stqa.aqa.addressbook.GroupCreationTests
+ua/stqa/aqa/addressbook/appmanager/NavigationHelper.java
+ ua.stqa.aqa.addressbook.appmanager.NavigationHelper
+ua/stqa/aqa/addressbook/tests/TestBase.java
+ ua.stqa.aqa.addressbook.tests.TestBase
+ua/stqa/aqa/addressbook/tests/GroupDeletionTests.java
+ ua.stqa.aqa.addressbook.tests.GroupDeletionTests
+ua/stqa/aqa/addressbook/model/GroupData.java
+ ua.stqa.aqa.addressbook.model.GroupData
+ua/stqa/aqa/addressbook/appmanager/SessionHelper.java
+ ua.stqa.aqa.addressbook.appmanager.SessionHelper
+ua/stqa/aqa/addressbook/appmanager/ApplicationManager.java
+ ua.stqa.aqa.addressbook.appmanager.ApplicationManager
+ua/stqa/aqa/addressbook/appmanager/GroupHelper.java
+ ua.stqa.aqa.addressbook.appmanager.GroupHelper
+ua/stqa/aqa/addressbook/tests/GroupCreationTests.java
+ ua.stqa.aqa.addressbook.tests.GroupCreationTests
