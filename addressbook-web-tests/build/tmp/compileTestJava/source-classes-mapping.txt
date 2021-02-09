@@ -6,8 +6,6 @@ ua/stqa/aqa/addressbook/appmanager/NavigationHelper.java
  ua.stqa.aqa.addressbook.appmanager.NavigationHelper
 ua/stqa/aqa/addressbook/appmanager/HelperBase.java
  ua.stqa.aqa.addressbook.appmanager.HelperBase
-ua/stqa/aqa/addressbook/appmanager/ApplicationManager.java
- ua.stqa.aqa.addressbook.appmanager.ApplicationManager
 ua/stqa/aqa/addressbook/appmanager/GroupHelper.java
  ua.stqa.aqa.addressbook.appmanager.GroupHelper
 ua/stqa/aqa/addressbook/tests/GroupModificationTests.java
@@ -16,5 +14,7 @@ ua/stqa/aqa/addressbook/tests/TestBase.java
  ua.stqa.aqa.addressbook.tests.TestBase
 ua/stqa/aqa/addressbook/tests/GroupDeletionTests.java
  ua.stqa.aqa.addressbook.tests.GroupDeletionTests
+ua/stqa/aqa/addressbook/appmanager/ApplicationManager.java
+ ua.stqa.aqa.addressbook.appmanager.ApplicationManager
 ua/stqa/aqa/addressbook/tests/GroupCreationTests.java
  ua.stqa.aqa.addressbook.tests.GroupCreationTests

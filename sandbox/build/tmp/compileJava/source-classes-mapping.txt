@@ -6,3 +6,5 @@ ua/stqa/aqa/sandbox/Square.java
  ua.stqa.aqa.sandbox.Square
 ua/stqa/aqa/sandbox/Equitation.java
  ua.stqa.aqa.sandbox.Equitation
+ua/stqa/aqa/sandbox/Equality.java
+ ua.stqa.aqa.sandbox.Equality
