@@ -1,2 +1,4 @@
 ua/stqa/aqa/sandbox/SquareTest.java
  ua.stqa.aqa.sandbox.SquareTest
+ua/stqa/aqa/sandbox/EquationTests.java
+ ua.stqa.aqa.sandbox.EquationTests

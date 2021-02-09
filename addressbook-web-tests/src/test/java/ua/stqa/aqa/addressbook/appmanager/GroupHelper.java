@@ -36,14 +36,20 @@ public class GroupHelper extends HelperBase {
   }
 
   public void initGroupModification() {
-    click(By.name("edit"));
-
-    //click(By.cssSelector(input[3]));
-    //click(By.xpath("form[action='/addressbook/group.php'] > input:nth-of-type(3)"));
+    //click(By.name("edit")); //working
+    //click(By.cssSelector("form[action='/addressbook/group.php'] > input:nth-of-type(3)")); //working
+    click(By.xpath("//input[3]"));
+    // css: form[action='/addressbook/group.php'] > input:nth-of-type(3)
+    // xpath: //input[3]
   }
 
   public void submitGroupModification() {
-    click(By.name("update"));
-   //input[@name='update'] [name='update']
+    /*
+    click(By.name("update")); - working
+    click(By.xpath("//input[@name='update']")); -working
+    xp: //input[@name='update']        css: [name='update'] - from POM builder
+    */
+    click(By.cssSelector("[name='update']"));
+
   }
 }

@@ -4,3 +4,5 @@ ua/stqa/aqa/sandbox/MyFirstProgram.java
  ua.stqa.aqa.sandbox.MyFirstProgram
 ua/stqa/aqa/sandbox/Square.java
  ua.stqa.aqa.sandbox.Square
+ua/stqa/aqa/sandbox/Equitation.java
+ ua.stqa.aqa.sandbox.Equitation
