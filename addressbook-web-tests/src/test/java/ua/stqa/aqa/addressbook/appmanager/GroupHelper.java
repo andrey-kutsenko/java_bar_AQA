@@ -34,4 +34,16 @@ public class GroupHelper extends HelperBase {
   public void selectGroup() {
     click(By.name("selected[]"));
   }
+
+  public void initGroupModification() {
+    click(By.name("edit"));
+
+    //click(By.cssSelector(input[3]));
+    //click(By.xpath("form[action='/addressbook/group.php'] > input:nth-of-type(3)"));
+  }
+
+  public void submitGroupModification() {
+    click(By.name("update"));
+   //input[@name='update'] [name='update']
+  }
 }

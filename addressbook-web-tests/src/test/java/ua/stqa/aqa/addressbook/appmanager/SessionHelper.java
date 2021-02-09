@@ -16,10 +16,5 @@ public class SessionHelper extends HelperBase {
     type(By.name("pass"),password);
     click(By.cssSelector("input:nth-child(7)"));
 
-    //driver.findElement(By.name("user")).click();
-    //driver.findElement(By.name("user")).sendKeys(username);
-   // driver.findElement(By.name("pass")).click();
-    //driver.findElement(By.name("pass")).sendKeys(password);
-    //driver.findElement(By.cssSelector("input:nth-child(7)")).click();
   }
 }
