@@ -6,8 +6,6 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.BrowserType;
 
-import java.time.Duration;
-
 public class ApplicationManager {
   WebDriver driver;
   private NavigationHelper navigationHelper;

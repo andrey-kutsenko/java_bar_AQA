@@ -1,10 +1,14 @@
 ua/stqa/aqa/sandbox/Rectangle.java
  ua.stqa.aqa.sandbox.Rectangle
-ua/stqa/aqa/sandbox/MyFirstProgram.java
- ua.stqa.aqa.sandbox.MyFirstProgram
-ua/stqa/aqa/sandbox/Square.java
- ua.stqa.aqa.sandbox.Square
-ua/stqa/aqa/sandbox/Equitation.java
- ua.stqa.aqa.sandbox.Equitation
 ua/stqa/aqa/sandbox/Equality.java
  ua.stqa.aqa.sandbox.Equality
+ua/stqa/aqa/sandbox/Equitation.java
+ ua.stqa.aqa.sandbox.Equitation
+ua/stqa/aqa/sandbox/Square.java
+ ua.stqa.aqa.sandbox.Square
+ua/stqa/aqa/sandbox/MyFirstProgram.java
+ ua.stqa.aqa.sandbox.MyFirstProgram
+ua/stqa/aqa/sandbox/Primes.java
+ ua.stqa.aqa.sandbox.Primes
+ua/stqa/aqa/sandbox/Collections.java
+ ua.stqa.aqa.sandbox.Collections

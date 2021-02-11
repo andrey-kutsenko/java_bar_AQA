@@ -2,3 +2,5 @@ ua/stqa/aqa/sandbox/SquareTest.java
  ua.stqa.aqa.sandbox.SquareTest
 ua/stqa/aqa/sandbox/EquationTests.java
  ua.stqa.aqa.sandbox.EquationTests
+ua/stqa/aqa/sandbox/PrimesTest.java
+ ua.stqa.aqa.sandbox.PrimesTest
