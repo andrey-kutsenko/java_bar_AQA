@@ -52,4 +52,15 @@ public class GroupHelper extends HelperBase {
     click(By.cssSelector("[name='update']"));
 
   }
+
+  public void createGroup(GroupData group) {
+    initGroupCreation("new");
+    fillGroupForm(group);
+    submitGroupCreation();
+    returnToGroupPage();
+  }
+
+  public boolean IsThereAGroup() {
+    return isElementPresent(By.name("selected[]"));
+  }
 }
