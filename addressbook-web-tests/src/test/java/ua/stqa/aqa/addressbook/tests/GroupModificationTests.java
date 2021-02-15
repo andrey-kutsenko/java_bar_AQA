@@ -1,37 +1,37 @@
 package ua.stqa.aqa.addressbook.tests;
 
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ua.stqa.aqa.addressbook.model.GroupData;
 
 import java.util.Comparator;
-import java.util.HashSet;
 import java.util.List;
 
 public class GroupModificationTests extends TestBase{
+  @BeforeMethod
+  public void ensurePreconditions() {
+    app.goTo().groupPage();
+    if (app.group().list().size()==0) {
+      app.group().create(new GroupData().withName("test"));
+    }
+  }
+
   @Test
   public void testGroupModification (){
-    app.getNavigationHelper().gotoGroupPage();
-    if(! app.getGroupHelper().IsThereAGroup()){
-      app.getGroupHelper().createGroup(new GroupData("test1", null, "testc"));
-    }
-    List<GroupData> before=app.getGroupHelper().getGroupList();
+    List<GroupData> before=app.group().list();
+    int index=before.size()-1;
+    GroupData group = new GroupData().withId(before.get(index).getId())
+            .withName("test1").withHeader("test2").withFooter("test3");
+    app.group().modify(index, group);
+    List<GroupData> after=app.group().list();
     //int before=app.getGroupHelper().getGroupCount();
-    app.getGroupHelper().selectGroup(before.size()-1);
-    app.getGroupHelper().initGroupModification();
-    //GroupData group = new GroupData("s","d","f","g");
-    GroupData group = new GroupData(before.get(before.size()-1).getId(),"test1", "test2", "test3");
-    app.getGroupHelper().fillGroupForm(group);
-    app.getGroupHelper().submitGroupModification();
-    app.getGroupHelper().returnToGroupPage();
-
-    List<GroupData> after=app.getGroupHelper().getGroupList();
     //int after=app.getGroupHelper().getGroupCount();
     System.out.println(before.size());
     System.out.println(after.size());
     //Assert.assertEquals(after.size(),before.size());
 
-    before.remove(before.size()-1);
+    before.remove(index);
     before.add(group);
 
     Comparator<? super GroupData> byId=(g1,g2)->Integer.compare(g1.getId(), g2.getId());
@@ -40,4 +40,6 @@ public class GroupModificationTests extends TestBase{
     //Assert.assertEquals(new HashSet<GroupData>(after),new HashSet<GroupData>(before));
     Assert.assertEquals(before,after);
   }
+
+
 }
