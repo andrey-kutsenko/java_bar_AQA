@@ -7,9 +7,7 @@ import ua.stqa.aqa.addressbook.model.GroupData;
 import ua.stqa.aqa.addressbook.model.Groups;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 public class GroupHelper extends HelperBase {
   public GroupHelper(WebDriver driver) {
@@ -124,6 +122,4 @@ public class GroupHelper extends HelperBase {
     }
     return new Groups(groupCache);
   }
-
-
 }

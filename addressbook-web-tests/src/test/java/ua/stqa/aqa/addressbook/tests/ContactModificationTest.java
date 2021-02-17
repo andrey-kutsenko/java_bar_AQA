@@ -1,7 +1,6 @@
 package ua.stqa.aqa.addressbook.tests;
 
 import org.testng.annotations.Test;
-import ua.stqa.aqa.addressbook.model.ContactData;
 
 public class ContactModificationTest extends TestBase {
   @Test(enabled = false)

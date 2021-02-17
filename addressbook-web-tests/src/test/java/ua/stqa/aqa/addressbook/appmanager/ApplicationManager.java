@@ -18,7 +18,6 @@ public class ApplicationManager {
     this.browser = browser;
   }
 
-
   public void init() {
     if (browser.equals(BrowserType.CHROME)){
       driver=new ChromeDriver();
@@ -29,7 +28,6 @@ public class ApplicationManager {
     else if(browser.equals(BrowserType.IE)){
       driver=new InternetExplorerDriver();
     }
-
     driver.get("http://localhost/addressbook/");
     groupHelper = new GroupHelper(driver);
     navigationHelper = new NavigationHelper(driver);
@@ -37,9 +35,6 @@ public class ApplicationManager {
     contactHelper=new ContactHelper(driver);
     sessionHelper.login("admin", "secret");
   }
-
-
-
   public void stop() {
     driver.quit();
   }
@@ -47,14 +42,12 @@ public class ApplicationManager {
   public GroupHelper group() {
     return groupHelper;
   }
-
   public NavigationHelper goTo() {
     return navigationHelper;
   }
   public ContactHelper contact() {
     return contactHelper;
   }
-
 
   public ContactHelper getContactHelper() {
     return contactHelper;

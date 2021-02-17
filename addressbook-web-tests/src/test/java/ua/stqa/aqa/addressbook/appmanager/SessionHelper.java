@@ -7,7 +7,6 @@ public class SessionHelper extends HelperBase {
 
 
   public SessionHelper(WebDriver driver) {
-
     super(driver);
   }
   public void login(String username, String password) {
@@ -15,6 +14,5 @@ public class SessionHelper extends HelperBase {
     type(By.name("user"),username);
     type(By.name("pass"),password);
     click(By.cssSelector("input:nth-child(7)"));
-
   }
 }
