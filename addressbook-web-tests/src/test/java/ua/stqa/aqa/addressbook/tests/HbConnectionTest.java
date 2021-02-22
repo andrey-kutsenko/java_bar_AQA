@@ -1,14 +1,19 @@
 package ua.stqa.aqa.addressbook.tests;
 
+import com.ibm.icu.text.SimpleDateFormat;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+import org.hibernate.query.Query;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import ua.stqa.aqa.addressbook.model.ContactData;
 import ua.stqa.aqa.addressbook.model.GroupData;
 
+import java.sql.Date;
+import java.text.ParseException;
 import java.util.List;
 
 public class HbConnectionTest {
@@ -34,12 +39,13 @@ public class HbConnectionTest {
   }
 
   @Test
-  public void testHbConnection(){
+  public void testHbConnection() throws ParseException {
     Session session = sessionFactory.openSession();
     session.beginTransaction();
-    List result = session.createQuery("from GroupData").list();
-    for (GroupData group :(List<GroupData>)result) {
-      System.out.println(group);
+    List<ContactData> result = session.createQuery("from ContactData where firstname='Alen'").list();
+    for (ContactData contact :result) {
+      System.out.println(contact);
+      System.out.println(contact.getGroups());
     }
     session.getTransaction().commit();
     session.close();

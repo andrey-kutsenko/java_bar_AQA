@@ -1,24 +1,64 @@
 package ua.stqa.aqa.addressbook.model;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.Type;
+
+import javax.persistence.*;
 import java.io.File;
+import java.util.HashSet;
+import java.util.Set;
+
+@Entity
+@Table (name = "addressbook")
 
 public class ContactData {
+  @Id
+  @Column(name = "id")
   private int id;
+  @Column(name = "firstname")
   private String firstname;
+  @Column(name = "lastname")
   private String lastname;
-  private String group;
+
+  @Column(name = "home")
+  @Type(type = "text")
   private String homePhone;
+  @Column(name = "mobile")
+  @Type(type = "text")
   private String mobilePhone;
+  @Column(name = "work")
+  @Type(type = "text")
   private String workPhone;
+  @Transient
   private String allPhones;
-  private File photo;
+  @Column(name = "photo")
+  @Type(type = "text")
+  private String photo;
+
+  public Groups getGroups() {
+    return new Groups(groups);
+  }
+
+  @ManyToMany(fetch = FetchType.EAGER)
+  @JoinTable(name = "address_in_groups",joinColumns =@JoinColumn(name = "id"),
+          inverseJoinColumns =@JoinColumn(name = "group_id") )
+  private Set<GroupData> groups=new HashSet<GroupData>();
+
+  @Override
+  public String toString() {
+    return "ContactData{" +
+            "id=" + id +
+            ", firstname='" + firstname + '\'' +
+            ", lastname='" + lastname + '\'' +
+            '}';
+  }
 
   public File getPhoto() {
-    return photo;
+    return new File(photo);
   }
 
   public ContactData withPhoto(File photo) {
-    this.photo = photo;
+    this.photo = photo.getPath();
     return this;
   }
 
@@ -69,6 +109,11 @@ public class ContactData {
   }
   public ContactData withWorkPhone(String workPhone) {
     this.workPhone = workPhone;
+    return this;
+  }
+
+  public ContactData inGroup(GroupData group) {
+    groups.add(group);
     return this;
   }
 }

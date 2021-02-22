@@ -2,17 +2,23 @@ package ua.stqa.aqa.addressbook.tests;
 
 import org.testng.annotations.Test;
 import ua.stqa.aqa.addressbook.model.ContactData;
+import ua.stqa.aqa.addressbook.model.Groups;
 
 import java.io.File;
 
 public class ContactCreationTests extends TestBase{
   @Test
   public void testContactCreation(){
+    Groups groups=app.db().groups();
+    File photo=new File("src/test/resources/Me.png");
+    ContactData newContact=new ContactData().withFirstname("test_name")
+            .withLastname("test_lastname").withPhoto(photo).inGroup(groups.iterator().next());
     app.goTo().gotoHomePage();
     app.getContactHelper().initContactCreation();
-    File photo=new File("src/test/resources/Me.png");
-    app.getContactHelper().fillContactForm(new ContactData().withFirstname("test_name")
-            .withLastname("test_lastname").withPhoto(photo),true);
+
+    //app.getContactHelper().fillContactForm(new ContactData().withFirstname("test_name")
+        //    .withLastname("test_lastname").withPhoto(photo),true);
+    app.contact().fillContactForm(newContact,true);
     app.getContactHelper().submitContactCreation();
     app.getContactHelper().returnToHomePage();
   }
