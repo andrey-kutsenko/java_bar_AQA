@@ -1,0 +1,8 @@
+ua/stqa/aqa/mantis/appmanager/ApplicationManager.java
+ ua.stqa.aqa.mantis.appmanager.ApplicationManager
+ua/stqa/aqa/mantis/tests/TestBase.java
+ ua.stqa.aqa.mantis.tests.TestBase
+ua/stqa/aqa/mantis/tests/LoginTests.java
+ ua.stqa.aqa.mantis.tests.LoginTests
+ua/stqa/aqa/mantis/appmanager/HttpSession.java
+ ua.stqa.aqa.mantis.appmanager.HttpSession
