@@ -12,9 +12,7 @@ import org.apache.http.impl.client.LaxRedirectStrategy;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 
-import java.io.Closeable;
 import java.io.IOException;
-import java.net.http.HttpClient;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,7 +26,8 @@ public class HttpSession {
     httpclient= HttpClients.custom().setRedirectStrategy(new LaxRedirectStrategy()).build();
   }
   public boolean login(String username,String password) throws IOException{
-    HttpPost post=new HttpPost(app.getProperty("web.baseUrl"+"/login.php"));
+    HttpPost post=new HttpPost("http://localhost/mantisbt-1.3.20/login.php");
+    //HttpPost post=new HttpPost(app.getProperty("web.BaseURL"+"/login.php"));
     List<NameValuePair>params=new ArrayList<NameValuePair>();
     params.add(new BasicNameValuePair("username",username));
     params.add(new BasicNameValuePair("password",password));
@@ -37,8 +36,10 @@ public class HttpSession {
     post.setEntity(new UrlEncodedFormEntity(params));
     CloseableHttpResponse response=httpclient.execute(post);
     String body=geTextFrom(response);
+    //System.out.println(body);
+   // return body.contains("<span id=\"logged-in-user\">administrator</span>");
     return body.contains(String.format("<span id=\"logged-in-user\">%s</span>",username));
-   // return body.contains(String.format("<span class=\"italic\">%s</span>",username));
+    //return body.contains(String.format("<span class=\"italic\">%s</span>",username));
     //        <span id="logged-in-user">administrator</span>
 
   }
@@ -52,10 +53,12 @@ public class HttpSession {
     }
   }
   public boolean isLoggedInAs(String username)throws IOException{
-    HttpGet get=new HttpGet(app.getProperty("web.baseUrl")+"/index.php");
+    HttpGet get=new HttpGet(app.getProperty("web.BaseURL")+"/index.php");
     CloseableHttpResponse response=httpclient.execute(get);
     String body=geTextFrom(response);
-    return body.contains(String.format("<span class=\"italic\">%s</span>",username));
+    return body.contains(String.format("<span id=\"logged-in-user\">%s</span>",username));
+    //return body.contains("<span id=\"logged-in-user\">administrator</span>");
+    //return body.contains(String.format("<span class=\"italic\">%s</span>",username));
 
   }
 }
