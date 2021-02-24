@@ -11,12 +11,7 @@ apply plugin: 'java'
      compile 'org.seleniumhq.selenium:selenium-java:4.0.0-alpha-7'
      compile 'org.hamcrest:java-hamcrest:2.0.0.0'
      compile 'org.apache.httpcomponents:httpclient-cache:4.5.3'
-
-
-
-
-
-
+     compile 'commons-net:commons-net:3.4'
 
 
 

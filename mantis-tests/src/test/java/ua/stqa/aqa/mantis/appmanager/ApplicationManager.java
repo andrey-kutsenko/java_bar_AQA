@@ -12,43 +12,26 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class ApplicationManager {
+
   private final Properties properties;
-  WebDriver driver;
-
+  private WebDriver driver;
   private String browser;
-
+  private RegistrationHelper registrationHelper;
+  private FtpHelper ftp;
 
   public ApplicationManager(String browser){
-
     this.browser = browser;
     properties=new Properties();
   }
-
   public void init() throws IOException {
     String target=System.getProperty("target","local");
     properties.load(new FileReader(new File(String.format("src/test/resources/%s.properties",target))));
-
-
-
-    if (browser.equals(BrowserType.CHROME)){
-      driver=new ChromeDriver();
-    }
-    else if(browser.equals(BrowserType.FIREFOX)){
-      driver=new FirefoxDriver();
-    }
-    else if(browser.equals(BrowserType.IE)){
-      driver=new InternetExplorerDriver();
-    }
-
-    driver.get(properties.getProperty("web.BaseURL"));
-
-
-
   }
   public void stop() {
-    driver.quit();
+    if(driver!=null){
+      driver.quit();
+    }
   }
-
   public HttpSession newSession(){
     return new HttpSession(this);
   }
@@ -56,4 +39,32 @@ public class ApplicationManager {
     return properties.getProperty(key);
   }
 
+  public RegistrationHelper registration() {
+    if(registrationHelper ==null){
+      registrationHelper = new RegistrationHelper(this);
+    }
+    return registrationHelper;
+  }
+  public FtpHelper ftp(){
+    if(ftp==null){
+      ftp=new FtpHelper(this);
+    }
+    return ftp;
+  }
+
+  public WebDriver getDriver() {
+    if(driver==null){
+      if (browser.equals(BrowserType.CHROME)){
+        driver=new ChromeDriver();
+      }
+      else if(browser.equals(BrowserType.FIREFOX)){
+        driver=new FirefoxDriver();
+      }
+      else if(browser.equals(BrowserType.IE)){
+        driver=new InternetExplorerDriver();
+      }
+      driver.get(properties.getProperty("web.BaseURL"));
+    }
+    return driver;
+  }
 }
