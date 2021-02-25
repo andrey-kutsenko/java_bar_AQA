@@ -2,13 +2,19 @@ ua/stqa/aqa/mantis/appmanager/ApplicationManager.java
  ua.stqa.aqa.mantis.appmanager.ApplicationManager
 ua/stqa/aqa/mantis/appmanager/RegistrationHelper.java
  ua.stqa.aqa.mantis.appmanager.RegistrationHelper
-ua/stqa/aqa/mantis/appmanager/HttpSession.java
- ua.stqa.aqa.mantis.appmanager.HttpSession
-ua/stqa/aqa/mantis/appmanager/FtpHelper.java
- ua.stqa.aqa.mantis.appmanager.FtpHelper
 ua/stqa/aqa/mantis/tests/TestBase.java
  ua.stqa.aqa.mantis.tests.TestBase
+ua/stqa/aqa/mantis/appmanager/HelperBase.java
+ ua.stqa.aqa.mantis.appmanager.HelperBase
+ua/stqa/aqa/mantis/appmanager/FtpHelper.java
+ ua.stqa.aqa.mantis.appmanager.FtpHelper
 ua/stqa/aqa/mantis/tests/LoginTests.java
  ua.stqa.aqa.mantis.tests.LoginTests
+ua/stqa/aqa/mantis/model/MailMessage.java
+ ua.stqa.aqa.mantis.model.MailMessage
+ua/stqa/aqa/mantis/appmanager/MailHelper.java
+ ua.stqa.aqa.mantis.appmanager.MailHelper
+ua/stqa/aqa/mantis/appmanager/HttpSession.java
+ ua.stqa.aqa.mantis.appmanager.HttpSession
 ua/stqa/aqa/mantis/tests/RegistrationTests.java
  ua.stqa.aqa.mantis.tests.RegistrationTests
