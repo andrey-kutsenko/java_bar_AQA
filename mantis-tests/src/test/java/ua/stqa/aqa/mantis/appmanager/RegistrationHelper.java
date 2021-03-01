@@ -13,13 +13,15 @@ public class RegistrationHelper extends HelperBase {
    // driver.get("http://localhost/mantisbt-1.3.20/signup_page.php");
     type(By.name("username"),username);
     type(By.name("email"),email);
-    click(By.cssSelector("input[value='Signup']"));
-   // <input type="submit" class="button" value="Зарегистрироваться">  //input[@class='button']
+    //click(By.cssSelector("input[value='Signup']"));
+    click(By.xpath("//input[@class='button']"));
+   // <input type="submit" class="button" value="Зарегистрироваться">  //input[@class='button'] //input[@class='button']
   }
   public void finish(String confirmationLink, String password) {
     driver.get(confirmationLink);
     type(By.name("password"),password);
     type(By.name("password_confirm"),password);
-    click(By.cssSelector("input[value='Update User']"));
+    //click(By.cssSelector("input[value='Update User']"));
+    click(By.xpath("//input[@class='button']"));
   }
 }
