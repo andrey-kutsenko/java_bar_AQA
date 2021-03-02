@@ -1,0 +1,5 @@
+ua/stqa/aqa/rest/Issue.java
+ ua.stqa.aqa.rest.Issue
+ua/stqa/aqa/rest/RestTests.java
+ ua.stqa.aqa.rest.RestTests
+ ua.stqa.aqa.rest.RestTests$1

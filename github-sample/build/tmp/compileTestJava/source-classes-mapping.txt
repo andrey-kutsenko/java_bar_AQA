@@ -1,0 +1,2 @@
+ua/stqa/aqa/github/GithubTests.java
+ ua.stqa.aqa.github.GithubTests
