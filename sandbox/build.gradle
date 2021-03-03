@@ -10,7 +10,6 @@ mainClassName= "ua.stqa.aqa.sandbox.MyFirstProgram"
  dependencies {
      compile 'org.testng:testng:7.3.0'
 
-
  }
  test {
      useTestNG()

@@ -30,7 +30,7 @@ public class EquationTests {
     Assert.assertEquals(e.rootNumber(),0);
   }
   @Test
-  public void testZero(){
+  public void testZero1(){
     Equitation e=new Equitation(0,0,0);
     Assert.assertEquals(e.rootNumber(),-1);
   }
