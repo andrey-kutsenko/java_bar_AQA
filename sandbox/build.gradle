@@ -13,5 +13,5 @@ mainClassName= "ua.stqa.aqa.sandbox.MyFirstProgram"
 
  }
  test {
-		useTestNG()
+     useTestNG()
  }
