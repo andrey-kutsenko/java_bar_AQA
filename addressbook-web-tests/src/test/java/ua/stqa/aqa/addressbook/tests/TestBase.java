@@ -33,7 +33,7 @@ public class TestBase {
   public void tearDown() {
     app.stop();
   }
-/*
+
   @BeforeMethod
   public void logTestStart(Method m, Object[]p){
     logger.info("Start test "+m.getName()+" with parameteres "+ Arrays.asList(p));
@@ -42,7 +42,7 @@ public class TestBase {
   public void logTestStop(Method m){
     logger.info("Stop test "+m.getName());
   }
-*/
+
   public void verifyGroupListInUI() {
     if(Boolean.getBoolean("verifyUI")){
       Groups dbGroups=app.db().groups();
