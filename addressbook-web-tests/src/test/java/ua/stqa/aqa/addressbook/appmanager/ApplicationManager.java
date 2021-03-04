@@ -1,6 +1,5 @@
 package ua.stqa.aqa.addressbook.appmanager;
 
-import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -10,7 +9,6 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
@@ -18,7 +16,7 @@ import java.util.Properties;
 
 public class ApplicationManager {
   private final Properties properties;
-  WebDriver driver;
+  WebDriver wd;
   private NavigationHelper navigationHelper;
   private GroupHelper groupHelper;
   private SessionHelper sessionHelper;
@@ -41,34 +39,34 @@ public class ApplicationManager {
 
     if("".equals(properties.getProperty("selenium.server"))) {
       if (browser.equals(BrowserType.CHROME)) {
-        driver = new ChromeDriver();
+        wd = new ChromeDriver();
       } else if (browser.equals(BrowserType.FIREFOX)) {
-        driver = new FirefoxDriver();
+        wd = new FirefoxDriver();
       } else if (browser.equals(BrowserType.IE)) {
-        driver = new InternetExplorerDriver();
+        wd = new InternetExplorerDriver();
       }
       else{
         DesiredCapabilities capabilities=new DesiredCapabilities();
         capabilities.setBrowserName(browser);
         //driver=new RemoteWebDriver(new URL("http://192.168.1.203:4444/driver/hub"),capabilities);
-        driver=new RemoteWebDriver(new URL(properties.getProperty("selenium.server")),capabilities);
+        wd =new RemoteWebDriver(new URL(properties.getProperty("selenium.server")),capabilities);
       }
     }
 
 
     //driver.get("http://localhost/addressbook/");
-    driver.get(properties.getProperty("web.BaseURL"));
-    groupHelper = new GroupHelper(driver);
-    navigationHelper = new NavigationHelper(driver);
-    sessionHelper=new SessionHelper(driver);
-    contactHelper=new ContactHelper(driver);
+    wd.get(properties.getProperty("web.BaseURL"));
+    groupHelper = new GroupHelper(wd);
+    navigationHelper = new NavigationHelper(wd);
+    sessionHelper=new SessionHelper(wd);
+    contactHelper=new ContactHelper(wd);
     //sessionHelper.login("admin", "secret");
     sessionHelper.login(properties.getProperty("web.adminlogin"),properties.getProperty("web.adminPassword"));
 
 
   }
   public void stop() {
-    driver.quit();
+    wd.quit();
   }
 
   public GroupHelper group() {
