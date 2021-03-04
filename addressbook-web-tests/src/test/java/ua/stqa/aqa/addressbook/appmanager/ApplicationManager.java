@@ -1,15 +1,19 @@
 package ua.stqa.aqa.addressbook.appmanager;
 
+import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.BrowserType;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.net.URL;
 import java.util.Properties;
 
 public class ApplicationManager {
@@ -33,16 +37,24 @@ public class ApplicationManager {
     properties.load(new FileReader(new File(String.format("src/test/resources/%s.properties",target))));
 
     dbHelper=new DbHelper();
+    //driver=new ChromeDriver();
 
-    if (browser.equals(BrowserType.CHROME)){
-      driver=new ChromeDriver();
+    if("".equals(properties.getProperty("selenium.server"))) {
+      if (browser.equals(BrowserType.CHROME)) {
+        driver = new ChromeDriver();
+      } else if (browser.equals(BrowserType.FIREFOX)) {
+        driver = new FirefoxDriver();
+      } else if (browser.equals(BrowserType.IE)) {
+        driver = new InternetExplorerDriver();
+      }
+      else{
+        DesiredCapabilities capabilities=new DesiredCapabilities();
+        capabilities.setBrowserName(browser);
+        driver=new RemoteWebDriver(new URL(properties.getProperty("selenium.server")),capabilities);
+      }
     }
-    else if(browser.equals(BrowserType.FIREFOX)){
-      driver=new FirefoxDriver();
-    }
-    else if(browser.equals(BrowserType.IE)){
-      driver=new InternetExplorerDriver();
-    }
+
+
     //driver.get("http://localhost/addressbook/");
     driver.get(properties.getProperty("web.BaseURL"));
     groupHelper = new GroupHelper(driver);

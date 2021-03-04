@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ua.stqa.aqa.addressbook.tests.GroupDeletionTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-02-18T12:09:09" hostname="ANDREY" time="2.444">
-  <properties/>
-  <testcase name="testGroupDeletion" classname="ua.stqa.aqa.addressbook.tests.GroupDeletionTests" time="2.444"/>
-  <system-out><![CDATA[37
-36
-]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

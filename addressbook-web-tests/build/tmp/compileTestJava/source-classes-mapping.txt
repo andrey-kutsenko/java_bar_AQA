@@ -16,14 +16,16 @@ ua/stqa/aqa/addressbook/model/GroupData.java
  ua.stqa.aqa.addressbook.model.GroupData
 ua/stqa/aqa/addressbook/tests/DbConnectionTest.java
  ua.stqa.aqa.addressbook.tests.DbConnectionTest
+ua/stqa/aqa/addressbook/tests/HbConnectionTest.java
+ ua.stqa.aqa.addressbook.tests.HbConnectionTest
+ua/stqa/aqa/addressbook/model/ContactData.java
+ ua.stqa.aqa.addressbook.model.ContactData
+ua/stqa/aqa/addressbook/appmanager/ContactHelper.java
+ ua.stqa.aqa.addressbook.appmanager.ContactHelper
 ua/stqa/aqa/addressbook/tests/ContactModificationTest.java
  ua.stqa.aqa.addressbook.tests.ContactModificationTest
 ua/stqa/aqa/addressbook/tests/GroupModificationTests.java
  ua.stqa.aqa.addressbook.tests.GroupModificationTests
-ua/stqa/aqa/addressbook/appmanager/ContactHelper.java
- ua.stqa.aqa.addressbook.appmanager.ContactHelper
-ua/stqa/aqa/addressbook/model/ContactData.java
- ua.stqa.aqa.addressbook.model.ContactData
 ua/stqa/aqa/addressbook/tests/TestBase.java
  ua.stqa.aqa.addressbook.tests.TestBase
 ua/stqa/aqa/addressbook/tests/GroupDeletionTests.java
@@ -37,5 +39,3 @@ ua/stqa/aqa/addressbook/tests/ContactCreationTests.java
 ua/stqa/aqa/addressbook/tests/GroupCreationTests.java
  ua.stqa.aqa.addressbook.tests.GroupCreationTests
  ua.stqa.aqa.addressbook.tests.GroupCreationTests$1
-ua/stqa/aqa/addressbook/tests/HbConnectionTest.java
- ua.stqa.aqa.addressbook.tests.HbConnectionTest
