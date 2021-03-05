@@ -57,8 +57,8 @@ public class ApplicationManager {
 
 
     //driver.get("http://localhost/addressbook/");
-    //wd.get(properties.getProperty("web.BaseURL"));
-    wd.get(properties.getProperty("http://192.168.1.203/addressbook/"));
+    wd.get(properties.getProperty("web.BaseURL"));
+    //wd.get(properties.getProperty("http://192.168.1.203/addressbook/"));
     groupHelper = new GroupHelper(wd);
     navigationHelper = new NavigationHelper(wd);
     sessionHelper=new SessionHelper(wd);
